@@ -3,6 +3,10 @@ import { randomUUID } from "crypto"
 export class DatabaseMemory{
 #trechoaereos = new Map()
 
+getById(id) {
+    return this.#trechoaereos.get(id);
+}
+
 //listando trechoaereos em as  chaves
 list(search){
     return Array.from(this.#trechoaereos.entries()).map((trechoaereoArray)  => {
