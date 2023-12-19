@@ -61,22 +61,22 @@ trechoaereo.put('/trechoaereos/:id',(request, reply) => {
     //return 'atualizar'
 })
 
-trechoaereo.patch('/trechoaereos/:id',(request, reply) => {
-    //Passando o ID do trechoaereo
-    const trechoaereoId = request.params.id
-    //Passando restante dos atibutos
-    const{País, Cidade, tempodevoou} = request.body
+server.patch('/trechoaereo/:id', (request, reply) => {
+    const trechoaereoId = request.params.id;
+    const updates = request.body; // Os campos a serem atualizados
 
-    const trechoaereo = database.update(trechoaereoId, {
-        País: País,
-        Cidade: Cidade,
-        tempodevoou: tempodevoou,
+    const trechoaereoExistente = database.getById(trechoaereoId);
 
-    })
-    //Sucesso sem conteudo
-    return reply.status(204).send()
-    //return 'atualizar'
-})
+    if (!trechoaereoExistente) {
+        return reply.status(404).send({ message: 'trechoaereo não encontrado' });
+    }
+
+    const trechoaereoAtualizado = { ...trechoaereoExistente, ...updates };
+
+    database.update(trechoaereoId, trechoaereoAtualizado);
+
+    return reply.status(200).send();
+});
 
 trechoaereo.delete('/trechoaereos/:id',(request, reply) => {
     //Passando o ID do trechoaereo
