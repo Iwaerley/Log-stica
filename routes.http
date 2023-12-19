@@ -28,15 +28,14 @@ Content-Type: application/json
 }
 
 ###
-//Atualizando o livro cadastrado
-PATCH  http://localhost:3333/trechoaereos/db4c2912-f166-4fc5-b1a5-13fddad060dd
+//Atualizando o País cadastrado
+PATCH http://localhost:3333/livro/1a554518-9408-431f-9035-fda03114b956
 Content-Type: application/json
 
 {
-   "País": "País 003",
-    "Cidade": "Cidade 003",
-    "tempodevoou": 3
+    "País": "País Nova Zelandia"
 }
+
 
 ###
 //Deletando o livro cadastrado
