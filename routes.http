@@ -1,0 +1,43 @@
+POST http://localhost:3333/trechoaereos
+Content-Type: application/json
+
+{
+    "País": "País 001",
+    "Cidade": "Cidade 001",
+    "tempodevoou": 1
+}
+
+###
+//Criando e listando livros
+GET http://localhost:3333/trechoaereos
+
+
+###
+//Fazendo uma pesquisa com o search
+GET http://localhost:3333/trechoaereos?search=003
+
+###
+//Atualizando o livro cadastrado
+PUT http://localhost:3333/trechoaereos/9590c0f9-ebb0-4a67-9808-416d325eb9f8
+Content-Type: application/json
+
+{
+   "País": "País 002",
+    "Cidade": "Cidade 002",
+    "tempodevoou": 2
+}
+
+###
+//Atualizando o livro cadastrado
+PATCH  http://localhost:3333/trechoaereos/db4c2912-f166-4fc5-b1a5-13fddad060dd
+Content-Type: application/json
+
+{
+   "País": "País 003",
+    "Cidade": "Cidade 003",
+    "tempodevoou": 3
+}
+
+###
+//Deletando o livro cadastrado
+DELETE http://localhost:3333/trechoaereos/8ff52f5d-d2bf-4bc7-95c4-2dfdf91f92d1

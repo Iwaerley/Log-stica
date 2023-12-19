@@ -1,0 +1,18 @@
+{
+  "name": "logistica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "trechoaereo.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node trechoaereo.js",
+    "dev": "node --watch --no-warnings trechoaereo.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.25.1"
+  }
+}
